@@ -8,42 +8,64 @@ const ListaEstilizada = styled.ul`
     width: 212px;
 `
 
+const itensNavegacao = [
+    {
+        text: "Início",
+        iconeAtivo: "/public/assets/icones/home-ativo.png",
+        iconeInativo: "/public/assets/icones/home-inativo.png",
+        ativo: true
+    },
+    {
+        text: "Mais Vistas",
+        iconeAtivo: "/public/assets/icones/mais-vistas-ativo.png",
+        iconeInativo: "/public/assets/icones/mais-vistas-inativo.png",
+        ativo: false
+    },
+    {
+        text: "Mais Curtidas",
+        iconeAtivo: "/public/assets/icones/mais-curtidas-ativo.png",
+        iconeInativo: "/public/assets/icones/mais-curtidas-inativo.png",
+        ativo: false
+    },
+    {
+        text: "Novas",
+        iconeAtivo: "/public/assets/icones/novas-ativo.png",
+        iconeInativo: "public/assets/icones/novas-inativo.png",
+        ativo: false
+    },
+    {
+        text: "Surpreenda-me",
+        iconeAtivo: "/public/assets/icones/surpreenda-me-ativo.png",
+        iconeInativo: "public/assets/icones/surpreenda-me-inativo.png",
+        ativo: false
+    }
+]
+
+function montaItemNavegacao(itemNavegacao) {
+    return (<ItemNavegacao
+        key={itemNavegacao.text}
+        iconeAtivo={itemNavegacao.iconeAtivo}
+        iconeInativo={itemNavegacao.iconeInativo}
+        ativo={itemNavegacao.ativo}
+    >
+        {itemNavegacao.text}
+    </ItemNavegacao>);
+}
+
+function getItensNavagecao() {
+    return itensNavegacao.map((itemNavegacao) => {
+        return montaItemNavegacao(itemNavegacao)
+    });
+}
+
 const BarraLateral = () => {
     return (
         <aside>
             <nav>
                 <ListaEstilizada>
-                    <ItemNavegacao
-                        iconeAtivo="/public/assets/icones/home-ativo.png"
-                        iconeInativo="public/assets/icones/home-inativo.png"
-                        ativo={true}
-                    >
-                        Início
-                    </ItemNavegacao>
-                    <ItemNavegacao
-                        iconeAtivo="/public/assets/icones/mais-vistas-ativo.png"
-                        iconeInativo="public/assets/icones/mais-vistas-inativo.png"
-                    >
-                        Mais vistas
-                    </ItemNavegacao>
-                    <ItemNavegacao
-                        iconeAtivo="/public/assets/icones/mais-curtidas-ativo.png"
-                        iconeInativo="public/assets/icones/mais-curtidas-inativo.png"
-                    >
-                        Mais curtidas
-                    </ItemNavegacao>
-                    <ItemNavegacao
-                        iconeAtivo="/public/assets/icones/novas-ativo.png"
-                        iconeInativo="public/assets/icones/novas-inativo.png"
-                    >
-                        Novas
-                    </ItemNavegacao>
-                    <ItemNavegacao
-                        iconeAtivo="/public/assets/icones/surpreenda-me.png"
-                        iconeInativo="public/assets/icones/surpreenda-me-inativo.png"
-                    >
-                        Surpreenda-me
-                    </ItemNavegacao>
+                    {
+                        getItensNavagecao()
+                    }
                 </ListaEstilizada>
 
             </nav>
