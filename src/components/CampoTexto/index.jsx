@@ -30,7 +30,7 @@ const InputEstilizado = styled.input`
 const CampoTexto = () => {
     return (
         <div>
-            <InputEstilizado type="search" placeholder="O que você procura?" onFocus={(e) => { console.log(e.target.style) }} />
+            <InputEstilizado type="search" placeholder="O que você procura?" />
         </div>
     )
 }
