@@ -6,29 +6,50 @@ export const GaleriaContext = createContext();
 export const GaleriaProvider = ({ children }) => {
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
   const [fotoSelecionada, setFotoSelecionada] = useState(null);
+  const [filtroFoto, setFiltroFoto] = useState("");
 
   const aoAlternarFavorito = (foto) => {
-    if(foto.id === fotoSelecionada?.id) {
+    if (foto.id === fotoSelecionada?.id) {
       setFotoSelecionada({
         ...fotoSelecionada,
-        favorita: !fotoSelecionada.favorita
-      })
+        favorita: !fotoSelecionada.favorita,
+      });
     }
-    setFotosDaGaleria(fotosDaGaleria.map((fotoDaGaleria) => {
-      return {
-        ...fotoDaGaleria,
-        favorita: fotoDaGaleria.id === foto.id ? !fotoDaGaleria.favorita : fotoDaGaleria.favorita
-      }
-    }))
-  }
+    setFotosDaGaleria(
+      fotosDaGaleria.map((fotoDaGaleria) => {
+        return {
+          ...fotoDaGaleria,
+          favorita:
+            fotoDaGaleria.id === foto.id
+              ? !fotoDaGaleria.favorita
+              : fotoDaGaleria.favorita,
+        };
+      })
+    );
+  };
+
+  useEffect(() => {
+    if(filtroFoto) {
+      setFotosDaGaleria(
+        fotosDaGaleria.filter((foto) =>
+          foto.titulo.toUpperCase().includes(filtroFoto.toUpperCase())
+        )
+      );
+    } else {
+      setFotosDaGaleria(fotos)
+    }
+  }, [filtroFoto]);
+
   return (
     <GaleriaContext.Provider
       value={{
         fotosDaGaleria,
         setFotosDaGaleria,
-        fotoSelecionada, 
+        fotoSelecionada,
         setFotoSelecionada,
-        aoAlternarFavorito
+        aoAlternarFavorito,
+        filtroFoto,
+        setFiltroFoto,
       }}
     >
       {children}
