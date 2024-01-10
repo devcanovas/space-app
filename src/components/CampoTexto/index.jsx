@@ -13,7 +13,7 @@ const InputEstilizado = styled.input`
   background-origin: content-box;
   /* Estilizando texto interno */
   color: #fff;
-  font-family: Gandhi Sans;
+  font-family: 'GandhiSansRegular';
   font-size: 1.25rem;
   font-style: normal;
   font-weight: 400;
