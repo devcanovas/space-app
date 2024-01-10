@@ -4,6 +4,7 @@ import Populares from "./Populares";
 import Tags from "./Tags";
 import { useContext } from "react";
 import { GaleriaContext } from "@/context/GaleriaContext";
+import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
   display: flex;
@@ -24,7 +25,17 @@ const Galeria = () => {
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>Navegue pela galeria</Titulo>
-          {fotosDaGaleria.map(foto => foto.titulo)}
+          <ul>
+            {fotosDaGaleria.map((foto) => (
+              <li>
+                <Imagem
+                  foto={foto.path}
+                  titulo={foto.titulo}
+                  fonte={foto.fonte}
+                />
+              </li>
+            ))}
+          </ul>
         </SecaoFluida>
         <Populares />
       </GaleriaContainer>
