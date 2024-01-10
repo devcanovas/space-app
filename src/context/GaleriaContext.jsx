@@ -7,13 +7,22 @@ export const GaleriaProvider = ({ children }) => {
   const [fotosDaGaleria, setFotosDaGaleria] = useState(fotos);
   const [fotoSelecionada, setFotoSelecionada] = useState(null);
 
+  const aoAlternarFavorito = (foto) => {
+    setFotosDaGaleria(fotosDaGaleria.map((fotoDaGaleria) => {
+      return {
+        ...fotoDaGaleria,
+        favorita: fotoDaGaleria.id === foto.id ? !fotoDaGaleria.favorita : fotoDaGaleria.favorita
+      }
+    }))
+  }
   return (
     <GaleriaContext.Provider
       value={{
         fotosDaGaleria,
         setFotosDaGaleria,
         fotoSelecionada, 
-        setFotoSelecionada
+        setFotoSelecionada,
+        aoAlternarFavorito
       }}
     >
       {children}
