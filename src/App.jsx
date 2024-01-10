@@ -4,6 +4,7 @@ import BarraLateral from "./components/BarraLateral";
 import EstilosGlobais from "./components/EstilosGlobais/EstilosGlobais.jsx";
 import Banner from "./components/Banner/index.jsx";
 import Galeria from "./components/Galeria/index.jsx";
+import { GaleriaProvider } from "./context/GaleriaContext.jsx";
 
 const FundoGradiente = styled.div`
   background: linear-gradient(
@@ -46,7 +47,9 @@ function App() {
               texto={"A galeria mais completa de fotos do espaço!"}
               backgroundImage={"/assets/banner.png"}
             />
-            <Galeria />
+            <GaleriaProvider>
+              <Galeria />
+            </GaleriaProvider>
           </ConteudoGaleria>
         </MainContainer>
       </AppContainer>
