@@ -15,10 +15,6 @@ const SecaoFluida = styled.section`
   flex-grow: 1;
 `;
 
-const UlEstilizado = styled.ul`
-  display: flex;
-  justify-content: space-between;
-`;
 const ImagensContainer = styled.section`
   display: flex;
   justify-content: space-between;
