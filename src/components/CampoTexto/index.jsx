@@ -8,7 +8,7 @@ const InputEstilizado = styled.input`
   box-sizing: border-box;
   border-radius: 0.625rem;
   border: 2px solid #c98cf1;
-  background: transparent url("public/assets/imagens/search.png") no-repeat
+  background: transparent url("/assets/imagens/search.png") no-repeat
     right;
   background-origin: content-box;
   /* Estilizando texto interno */

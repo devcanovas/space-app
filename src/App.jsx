@@ -44,7 +44,7 @@ function App() {
           <ConteudoGaleria>
             <Banner
               texto={"A galeria mais completa de fotos do espaço!"}
-              backgroundImage={"/public/assets/banner.png"}
+              backgroundImage={"/assets/banner.png"}
             />
             <Galeria />
           </ConteudoGaleria>

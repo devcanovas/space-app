@@ -11,32 +11,32 @@ const ListaEstilizada = styled.ul`
 const itensNavegacao = [
   {
     text: "Início",
-    iconeAtivo: "/public/assets/icones/home-ativo.png",
-    iconeInativo: "/public/assets/icones/home-inativo.png",
+    iconeAtivo: "/assets/icones/home-ativo.png",
+    iconeInativo: "/assets/icones/home-inativo.png",
     ativo: true,
   },
   {
     text: "Mais Vistas",
-    iconeAtivo: "/public/assets/icones/mais-vistas-ativo.png",
-    iconeInativo: "/public/assets/icones/mais-vistas-inativo.png",
+    iconeAtivo: "/assets/icones/mais-vistas-ativo.png",
+    iconeInativo: "/assets/icones/mais-vistas-inativo.png",
     ativo: false,
   },
   {
     text: "Mais Curtidas",
-    iconeAtivo: "/public/assets/icones/mais-curtidas-ativo.png",
-    iconeInativo: "/public/assets/icones/mais-curtidas-inativo.png",
+    iconeAtivo: "/assets/icones/mais-curtidas-ativo.png",
+    iconeInativo: "/assets/icones/mais-curtidas-inativo.png",
     ativo: false,
   },
   {
     text: "Novas",
-    iconeAtivo: "/public/assets/icones/novas-ativo.png",
-    iconeInativo: "public/assets/icones/novas-inativo.png",
+    iconeAtivo: "/assets/icones/novas-ativo.png",
+    iconeInativo: "assets/icones/novas-inativo.png",
     ativo: false,
   },
   {
     text: "Surpreenda-me",
-    iconeAtivo: "/public/assets/icones/surpreenda-me-ativo.png",
-    iconeInativo: "public/assets/icones/surpreenda-me-inativo.png",
+    iconeAtivo: "/assets/icones/surpreenda-me-ativo.png",
+    iconeInativo: "/assets/icones/surpreenda-me-inativo.png",
     ativo: false,
   },
 ];
