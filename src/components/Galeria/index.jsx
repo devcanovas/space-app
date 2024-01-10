@@ -8,16 +8,26 @@ import Imagem from "./Imagem";
 
 const GaleriaContainer = styled.div`
   display: flex;
+  gap: 24px;
 `;
 
 const SecaoFluida = styled.section`
   flex-grow: 1;
 `;
 
+const UlEstilizado = styled.ul`
+  display: flex;
+  justify-content: space-between;
+`;
+const ImagensContainer = styled.section`
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+`;
+
 const Galeria = () => {
   const { fotosDaGaleria, setFotosDaGaleria } = useContext(GaleriaContext);
-
-  console.log(fotosDaGaleria);
 
   return (
     <>
@@ -25,17 +35,11 @@ const Galeria = () => {
       <GaleriaContainer>
         <SecaoFluida>
           <Titulo>Navegue pela galeria</Titulo>
-          <ul>
+          <ImagensContainer>
             {fotosDaGaleria.map((foto) => (
-              <li>
-                <Imagem
-                  foto={foto.path}
-                  titulo={foto.titulo}
-                  fonte={foto.fonte}
-                />
-              </li>
+              <Imagem key={foto.id} foto={foto} />
             ))}
-          </ul>
+          </ImagensContainer>
         </SecaoFluida>
         <Populares />
       </GaleriaContainer>
